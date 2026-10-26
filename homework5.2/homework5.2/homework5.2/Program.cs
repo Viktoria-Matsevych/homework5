@@ -8,17 +8,17 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 string targetDirectory = Path.Combine("MyFolder", "Documents");
 string filePath = Path.Combine(targetDirectory, "info.txt");
 
-Console.WriteLine("=== Робота з текстовими файлами ===\n");
+Console.WriteLine("--- Робота з текстовими файлами ---\n");
 
 try
 {
     // Перевіряємо, чи існує папка Documents (на випадок, якщо Завдання 2 не запускали)
-    if (!Directory.Exists(targetDirectory))
+    if (Directory.Exists(targetDirectory))
     {
         Directory.CreateDirectory(targetDirectory);
     }
 
-    // 1. Формуємо інформацію про користувача
+    //Формуємо інформацію про користувача
     string firstName = "Вікторія"; // Вкажіть ваше ім'я
     string lastName = "Мацевич"; // Вкажіть ваше прізвище
     string group = "11-КН";       // Вкажіть вашу групу
@@ -29,11 +29,11 @@ try
                        $"Навчальна група: {group}\n" +
                        $"Дата створення файлу: {creationDate}\n";
 
-    // 2. Записуємо текст у файл (якщо файл існує, він буде перезаписаний)
+    //Записуємо текст у файл (якщо файл існує, він буде перезаписаний)
     File.WriteAllText(filePath, userLines);
     Console.WriteLine($"[Успішно] Дані записано у файл: {filePath}");
 
-    // 3. Перевіряємо існування файлу та виводимо його вміст
+    //Перевіряємо існування файлу та виводимо його вміст
     Console.WriteLine("\n--- Перевірка та читання файлу ---");
     if (File.Exists(filePath))
     {
