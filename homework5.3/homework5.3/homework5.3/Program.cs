@@ -3,6 +3,8 @@
 Console.InputEncoding = Encoding.UTF8;
 Console.OutputEncoding = Encoding.UTF8;
 
+Console.WriteLine("Task4");
+
 Console.WriteLine("--- Перегляд файлової системи ---");
 Console.Write("Введіть повний шлях до каталогу (або назву папки, наприклад, MyFolder): ");
 string inputPath = Console.ReadLine();
